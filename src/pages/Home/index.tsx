@@ -1,11 +1,13 @@
-import { useState } from 'react'
 import reactLogo from '@/assets/react.svg'
+import {counter} from '@/reducer'
 import viteLogo from '/vite.svg'
-import '@/App.css'
+import './style.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import {useAppSelector,useAppDispatch} from "@/hooks";
 
+function Home() {
+    const count = useAppSelector(state => state.counter.value)
+    const dispatch = useAppDispatch()
   return (
     <>
       <div>
@@ -18,7 +20,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => dispatch(counter.increment())}>
           count is {count}
         </button>
         <p>
@@ -32,4 +34,4 @@ function App() {
   )
 }
 
-export default App
+export {Home}

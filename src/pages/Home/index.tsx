@@ -1,13 +1,13 @@
-import reactLogo from '@/assets/react.svg'
-import {counter} from '@/reducer'
-import viteLogo from '/vite.svg'
-import './style.css'
+import reactLogo from '@/assets/react.svg';
+import { counter } from '@/reducer';
+import viteLogo from '/vite.svg';
+import './style.css';
 
-import {useAppSelector,useAppDispatch} from "@/hooks";
+import { useAppDispatch, useAppSelector } from '@/hooks';
 
 function Home() {
-    const count = useAppSelector(state => state.counter.value)
-    const dispatch = useAppDispatch()
+  const count = useAppSelector((state) => state.counter.value);
+  const dispatch = useAppDispatch();
   return (
     <>
       <div>
@@ -31,7 +31,7 @@ function Home() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export {Home}
+export { Home };
